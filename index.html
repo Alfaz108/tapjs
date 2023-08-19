@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Country Buttons</title>
+</head>
+<body>
+  <div class="button-container">
+    <div class="button-name-container">
+      <p id="button-name">Bangladesh</p>
+    </div>
+    <div class="button-group">
+      <button class="active" id="bangladesh-btn">Bangladesh</button>
+      <button id="india-btn">India</button>
+      <button id="srilanka-btn">Sri Lanka</button>
+    </div>
+  </div>
+</body>
+<script>
+    const buttons = document.querySelectorAll("button");
+const buttonName = document.getElementById("button-name");
+
+buttons.forEach(button => {
+  button.addEventListener("click", () => {
+    buttons.forEach(btn => btn.classList.remove("active"));
+    button.classList.add("active");
+    buttonName.textContent = button.textContent;
+  });
+});
+
+</script>
+</html>
